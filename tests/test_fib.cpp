@@ -31,6 +31,10 @@ TEST(GetString, Overfloww) {
     EXPECT_STREQ("Boat\0",  GetString("Boat"));
     
  }
+ int main(int argc, char** argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
 
 //  TEST(getatr, Testforgetatr) {
 //      Warship b;
