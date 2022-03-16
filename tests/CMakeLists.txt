@@ -12,5 +12,6 @@ find_package(GTest REQUIRED)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${FIB_LIB_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} ${FIB_LIB_LIBRARIES} gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} ${FIB_LIB_LIBRARIES} )
+target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} -pthread)
 
