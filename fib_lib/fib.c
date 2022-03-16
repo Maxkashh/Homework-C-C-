@@ -139,11 +139,12 @@ const char *GetString(const char *name) {
 }
 
 Warship *initShip(Warship *obj) {
-
-  obj = malloc(sizeof(Warship));
-  if (!obj) {
+ if (!obj) {
     return 1;
-  } else {
+  }
+     
+  obj = malloc(sizeof(Warship));
+  
 
     printf("%s\n", "Введите имя корабля:");
 
@@ -179,7 +180,7 @@ Warship *initShip(Warship *obj) {
     obj->Status = GetString(name);
 
     return obj;
-  }
+  
 }
 
 void SearchInfo(Warship **objects, const int countOfObjects) {
