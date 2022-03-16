@@ -51,34 +51,34 @@ TEST(GetString, Overfloww) {
     
     
 //  }
-TEST(voidfunctions, check) {
-printf("%s\n", "Введите количество кораблей:");
-    char c = 0;
-    scanf("%c", &c);
-    while (!isdigit(c))
-    {
-        printf("Error! Its not a digit! Enter your value again:%s\n");
-        fseek(stdin, 0, SEEK_END);
-        scanf("%c", &c);
+// TEST(voidfunctions, check) {
+// printf("%s\n", "Введите количество кораблей:");
+//     char c = 0;
+//     scanf("%c", &c);
+//     while (!isdigit(c))
+//     {
+//         printf("Error! Its not a digit! Enter your value again:%s\n");
+//         fseek(stdin, 0, SEEK_END);
+//         scanf("%c", &c);
 
-    }
-    int a = 0;
-    a = c - '0';
+//     }
+//     int a = 0;
+//     a = c - '0';
 
 
-    Warship** objects = (Warship**)malloc(sizeof(Warship*) * a);
-    //EXPECT_EQ(NULL,objects);
-    if (!objects) { return ; }
+//     Warship** objects = (Warship**)malloc(sizeof(Warship*) * a);
+//     //EXPECT_EQ(NULL,objects);
+//     if (!objects) { return ; }
      
-    else
-    {
-        for (int i = 0; i < a; ++i)
-        {
-            objects[i] = initShip(objects[i]);
-        }
-        SearchInfo(objects, a);
+//     else
+//     {
+//         for (int i = 0; i < a; ++i)
+//         {
+//             objects[i] = initShip(objects[i]);
+//         }
+//         SearchInfo(objects, a);
          
-       int check= DeleteMemory(objects, a);
-       EXPECT_EQ(1,check);
-    }
-}
+//        int check= DeleteMemory(objects, a);
+//        EXPECT_EQ(1,check);
+//     }
+// }
