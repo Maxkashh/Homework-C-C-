@@ -45,6 +45,9 @@ jobs:
             cd ../
             cat result.txt
             cat time1.txt
+            lcov --directory . --capture --output-file coverage.info
+            lcov --remove coverage.info '/usr/' "${HOME}" '/.cache/' --output-file coverage.info
+            lcov --list coverage.info
         - name: INPUT_TEST2
           run:  |
             cd v2
@@ -57,4 +60,7 @@ jobs:
             cd ../
             cat result.txt
             cat time2.txt
+            lcov --directory . --capture --output-file coverage.info
+            lcov --remove coverage.info '/usr/' "${HOME}" '/.cache/' --output-file coverage.info
+            lcov --list coverage.info
           
