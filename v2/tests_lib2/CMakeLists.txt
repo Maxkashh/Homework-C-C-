@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(test_fib)
+project(test_vec2)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-fprofile-arcs -ftest-coverage -O0")
@@ -11,7 +11,6 @@ file(GLOB SOURCES *.cpp)
 find_package(GTest REQUIRED)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_include_directories(${PROJECT_NAME} PUBLIC ${FIB_LIB_INCLUDE_DIRS})
-target_link_libraries(${PROJECT_NAME} ${FIB_LIB_LIBRARIES} )
+target_include_directories(${PROJECT_NAME} PUBLIC ${VEC_LIB_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} ${VEC_LIB_LIBRARIES} )
 target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES} -pthread)
-
