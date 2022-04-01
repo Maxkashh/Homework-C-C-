@@ -35,9 +35,26 @@ jobs:
             pwd
         - name: INPUT_TEST
           run:  |
+            cd v1
             mkdir -p build && cd build
             sudo cmake ..
             sudo make
+            ./v1
             cd tests
-            sudo ./test_fib
+            sudo ./test_vec
             cd ../
+            cat result.txt
+            cat time1.txt
+        - name: INPUT_TEST2
+          run:  |
+            cd v2
+            mkdir -p build && cd build
+            sudo cmake ..
+            sudo make
+            ./v2
+            cd tests_lib2
+            sudo ./test_vec2
+            cd ../
+            cat result.txt
+            cat time2.txt
+          
